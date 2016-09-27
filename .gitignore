@@ -2,6 +2,7 @@
 *.pot
 *.py[co]
 .tox/
+.env
 
 __pycache__
 
@@ -20,4 +21,6 @@ build/
 
 /.idea
 
-.env
+db.sqlite3
+
+.ropeproject/
