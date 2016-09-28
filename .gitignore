@@ -1,3 +1,10 @@
 *.pyc
+.env
+
+__pycache__
+
 /.idea
-/static
+
+db.sqlite3
+
+.ropeproject/
