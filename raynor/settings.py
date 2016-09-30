@@ -15,6 +15,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -29,12 +31,27 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'raynor.urls'
 
+redis_host = os.environ.get('REDIS_HOST', 'localhost')
+
+# Channel layer definitions
+# http://channels.readthedocs.org/en/latest/deploying.html#setting-up-a-channel-backend
+CHANNEL_LAYERS = {
+    "default": {
+        # This example app uses the Redis channel layer implementation asgi_redis
+        "BACKEND": "asgi_redis.RedisChannelLayer",
+        "CONFIG":  {
+            "hosts": [(redis_host, 6379)],
+        },
+        "ROUTING": "raynor.routing.channel_routing",
+    },
+}
+
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'BACKEND':  'django.template.backends.django.DjangoTemplates',
+        'DIRS':     [],
         'APP_DIRS': True,
-        'OPTIONS': {
+        'OPTIONS':  {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -50,7 +67,7 @@ WSGI_APPLICATION = 'raynor.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME':   os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="control-panel">
+        <ul class="control-menu-list">
+            <li class="control-menu-title">Create</li>
+            <li class="control-menu-content">
+                <ul class="control-menu-sub-list">
+                    <li><a id="id-create-all" class="btn-control font-white" data-url="{% url 'dashboard:create_all' %}">Create all</a></li>
+                    <li><a id="id-create-vpc" class="btn-control font-white" data-url="{% url 'dashboard:create_vpc' %}">Create vpc</a></li>
+                    <li><a id="id-create-nova" class="btn-control font-white" data-url="{% url 'dashboard:create_nova' %}">Create nova</a></li>
+                    <li><a id="id-create-rds" class="btn-control font-white" data-url="{% url 'dashboard:create_rds' %}">Create rds</a></li>
+                </ul>
+            </li>
+            <li class="control-menu-title">Terminate</li>
+            <li class="control-menu-content">
+                <ul class="control-menu-sub-list">                    
+                    <li><a id="id-terminate-all" class="btn-control font-white" data-url="{% url 'dashboard:terminate_all' %}">Terminate all</a></li>
+                    <li><a id="id-terminate-vpc" class="btn-control font-white" data-url="{% url 'dashboard:terminate_vpc' %}">Terminate vpc</a></li>
+                    <li><a id="id-terminate-nova" class="btn-control font-white" data-url="{% url 'dashboard:terminate_nova' %}">Terminate nova</a></li>
+                    <li><a id="id-terminate-rds" class="btn-control font-white" data-url="{% url 'dashboard:terminate_rds' %}">Terminate rds</a></li>
+                    <li><a id="id-terminate-eb-old-env" class="btn-control font-white" data-url="{% url 'dashboard:terminate_eb_old_env' %}">Terminate eb old env</a></li>
+                </ul>
+            </li>
+            <li class="control-menu-title">Settings</li>
+            <li class="control-menu-content">
+                <ul class="control-menu-sub-list">
+                    <li><a id="id-setting-aws-config" href="{% url 'dashboard:setting_aws_config' %}" class="btn-setting font-white">AWS Config settings</a></li>
+                </ul>
+            </li>
+        </ul>    
+    </div>
+    <div class="view-panel">
+        <div class="block-center-medium">
+            <div id="view-title" class="view-title">
+                {% if title %}
+                    {{ title }}
+                {% else %}
+                    No Running
+                {% endif %}
+            </div>
+            <div id="log-panel" class="view-log-panel">
+                <div id="log-content">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
