@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="setting-form-panel block-center-small">
+        <form action="{% url 'dashboard:setting_aws_config' %}" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-field-box">
+                    <label>{{ field.label }}</label>
+                    <div class="form-field">
+                        {{ field }}
+                    </div>
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                            <div class="field-error alert alert-danger" role="alert">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <div class="form-field-box">
+                <div class="form-field">
+                    <input type="submit" value="Save"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
