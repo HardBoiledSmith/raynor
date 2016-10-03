@@ -13,7 +13,7 @@ Raynor is web based GUI for [johanna](https://github.com/addnull/johanna)
         /raynor
     ```
 
-3. pip install -r requirements.txt
+3. Run `pip install -r requirements.txt`
 4. Run `python3 manage.py runserver`
 5. Go `AWS Config settings` page and set your aws config information
 6. You can run commands on left sidebar now.
