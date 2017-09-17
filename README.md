@@ -1,6 +1,6 @@
 # Introduction
 
-Raynor is web based GUI for [johanna](https://github.com/addnull/johanna)
+Raynor is web based GUI for [johanna](https://github.com/hardboiledsmith/johanna)
 
 # How To Play
 
