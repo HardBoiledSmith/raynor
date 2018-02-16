@@ -2,7 +2,6 @@ arrow==0.8.0
 asgi-redis==0.14.1
 asgiref==0.14.0
 autobahn==0.16.0
-awsebcli==3.7.8
 blessed==1.9.5
 botocore==1.4.57
 cement==2.8.2
