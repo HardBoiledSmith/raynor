@@ -25,7 +25,7 @@ requests==2.22.0
 semantic-version==2.6.0
 six==1.12.0
 texttable==1.6.2
-Twisted==19.2.1
+Twisted==19.7.0
 txaio==18.8.1
 uWSGI==2.0.18
 wcwidth==0.1.7
